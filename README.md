@@ -4,7 +4,8 @@
 ### 步骤
 http://www.linuxdiyf.com/linux/20012.html
 * 如果是Windows与Linux双系统安装，请选择其他选项，切记。您可以自己创建、调整分区，或者为 Ubuntu 选择多个分区。
-* 四个分区即可/boot、/、/home、swap。/home尽量给大点，因为平时使用的主要目录还是这里,独立
+* 四个分区即可/boot、/、/home、swap。/home尽量给大点，因为平时使用的主要目录还是这里
+* 最后一步安装启动程序选择/boot，这样就不会覆盖其他系统的启动
 
 ### 优化
 http://noogel.xyz/2017/06/17/1.html
@@ -86,12 +87,12 @@ sudo add-apt-repository ppa:hzwhuang/ss-qt5
 sudo apt-get update
 sudo apt-get install shadowsocks-qt5
 ```
-* chrome
+* chrome <br/>
 https://www.google.com/chrome/browser/desktop/index.html
 ```
 sudo dpkg -i google-chrome-stable_current_amd64.deb
 ```
-* SwitchyOmega
+* SwitchyOmega <br/>
 https://github.com/FelisCatus/SwitchyOmega/wiki/GFWList
 
 * shutter
@@ -131,7 +132,7 @@ https://askubuntu.com/questions/708061/qualcomm-atheros-device-168c0042-rev-30-w
 ```
 #查看驱动型号
 lspci -vvnn | grep Network
-
+#开始安装
 sudo apt-get install build-essential linux-headers-$(uname -r) git
 echo "options ath10k_core skip_otp=y" | sudo tee /etc/modprobe.d/ath10k_core.conf
 wget https://www.kernel.org/pub/linux/kernel/projects/backports/stable/v4.4.2/backports-4.4.2-1.tar.gz
@@ -156,4 +157,16 @@ sudo make install
 rfkill list
 #开启wifi
 rfkill unblock all
+```
+
+### 快捷键
+* 修改快捷键<br/>
+http://www.linuxdiyf.com/linux/22726.html
+* 禁用ALT+右键快捷键
+```
+#将默认的Alt+鼠标按键操作窗口（拖动、缩放、显示关闭菜单等）改为Windows键
+gsettings set org.gnome.desktop.wm.preferences mouse-button-modifier '<Super>'
+#另外在设置前后可以用来查看设置的值
+gsettings get org.gnome.desktop.wm.preferences mouse-button-modifier
+#不要将键值设置为'none'，否则会发现鼠标除了拖动窗口别无用处！!!
 ```
