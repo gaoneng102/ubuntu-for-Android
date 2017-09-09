@@ -1,11 +1,13 @@
 # ubuntu-for-Android
  在Ubuntu搭建安卓开发环境
-## 安装ubuntu
+## 安装ubuntu（基于16.04）
 ### 步骤
 http://www.linuxdiyf.com/linux/20012.html
 * 如果是Windows与Linux双系统安装，请选择其他选项，切记。您可以自己创建、调整分区，或者为 Ubuntu 选择多个分区。
 * 四个分区即可/boot、/、/home、swap。/home尽量给大点，因为平时使用的主要目录还是这里
 * 最后一步安装启动程序选择/boot，这样就不会覆盖其他系统的启动
+* 建议在有线网络下安装，因为wifi可能无法使用，导致安装之后某些图形界面的组件没有正常下载安装导致 “The system is running in low-graphics mode”异常<br>
+https://askubuntu.com/questions/141606/how-to-fix-the-system-is-running-in-low-graphics-mode-error
 
 ### 优化
 http://noogel.xyz/2017/06/17/1.html
@@ -164,9 +166,42 @@ rfkill unblock all
 http://www.linuxdiyf.com/linux/22726.html
 * 禁用ALT+右键快捷键
 ```
-#将默认的Alt+鼠标按键操作窗口（拖动、缩放、显示关闭菜单等）改为Windows键
+# 将默认的Alt+鼠标按键操作窗口（拖动、缩放、显示关闭菜单等）改为Windows键
 gsettings set org.gnome.desktop.wm.preferences mouse-button-modifier '<Super>'
-#另外在设置前后可以用来查看设置的值
+# 另外在设置前后可以用来查看设置的值
 gsettings get org.gnome.desktop.wm.preferences mouse-button-modifier
-#不要将键值设置为'none'，否则会发现鼠标除了拖动窗口别无用处！!!
+# 不要将键值设置为'none'，否则会发现鼠标除了拖动窗口别无用处！!!
+```
+
+## 安卓开发环境搭建
+* SDKMAN! CLI <br/>
+http://sdkman.io
+```
+curl -s "https://get.sdkman.io" | bash
+source "$HOME/.sdkman/bin/sdkman-init.sh"
+sdk version
+```
+* java(通过上面的sdk命令安装)
+```
+sdk install java
+```
+* gradle <br/>
+https://gradle.org/install/<br/>
+https://services.gradle.org/distributions/
+```
+sdk install gradle 4.1
+# Upgrade with the Gradle Wrapper
+./gradlew wrapper --gradle-version=4.1 --distribution-type=bin
+```
+
+* android studio <br/>
+https://developer.android.com/studio/index.html?hl=zh-cn#linux-bundle
+```
+# 64位需要安装32位的兼容库
+sudo apt-get install -y libc6-i386 lib32stdc++6 lib32gcc1 lib32ncurses5 lib32z1
+# android 环境变量
+export PATH=/home/mike/Sdk/tools:$PATH
+export PATH=/home/mike/Sdk/platform-tools:$PATH
+# android studio 环境变量
+export PATH=/usr/local/android-studio/bin:$PATH
 ```
