@@ -52,12 +52,6 @@ sudo apt-get install ultra-flat-icons
 ```
 sudo apt-get install fonts-wqy-microhei
 ```
-* 安装zsh(以及 oh-my-zsh)
-```
-sudo apt-get install zsh
-wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
-chsh -s /usr/local/bin/zsh
-```
 
 ### 必备软件
 * vim
@@ -68,19 +62,24 @@ sudo apt-get install vim
 ```
 sudo apt-get install git
 ```
-* 压缩软件RAR
-```
-sudo apt-get install rar
-```
 * curl <br/>
 https://curl.haxx.se/download.html
 ```
 sudo apt-get install curl
 ```
-* jq <br/>
+* jq (配合curl 格式化json数据的神器)<br/>
 https://stedolan.github.io/jq/
 ```
 sudo apt-get install jq
+```
+* 安装zsh(以及 oh-my-zsh)
+```
+sudo apt-get install zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+```
+* RAR
+```
+sudo apt-get install rar
 ```
 * Shadowsocks-Qt5 <br/>
 https://github.com/shadowsocks/shadowsocks-qt5/wiki/%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97
@@ -200,8 +199,66 @@ https://developer.android.com/studio/index.html?hl=zh-cn#linux-bundle
 # 64位需要安装32位的兼容库
 sudo apt-get install -y libc6-i386 lib32stdc++6 lib32gcc1 lib32ncurses5 lib32z1
 # android 环境变量
-export PATH=/home/mike/Sdk/tools:$PATH
-export PATH=/home/mike/Sdk/platform-tools:$PATH
+export PATH=/home/gaoneng/Sdk/tools:$PATH
+export PATH=/home/gaoneng/Sdk/platform-tools:$PATH
 # android studio 环境变量
 export PATH=/usr/local/android-studio/bin:$PATH
 ```
+* android studio 常用设置<br/>
+ 1. 系统字体设置
+ ```
+ Settings –> Appearance ，勾选 Override default fonts by (not recommended)
+ ```
+ 2. 修改默认快捷键
+ ```
+ Main menu –> Code –> Completion –> Basic ，修改为你想替换的快捷键组合
+ ```
+ 3. 设置right margin警示线
+ ```
+ Settings –> Editor –> Appearance ，勾选 Show right margin
+ ```
+ 4. 显示行号
+ ```
+ Settings –> Editor –> Appearance ，勾选 Show right margin
+ ```
+ 5. 禁用拼写检查
+ ```
+ Settings –> Inspections –> Spelling ，取消勾选
+ ```
+ 6. 自动导入设置
+ ```
+ Settings –> Editor –> Auto Import ，勾选 Add unambiguous improts on the fly
+ ```
+ 7. android 导入模板文件
+ ```
+ https://github.com/keyboardsurfer/idea-live-templates
+ ```
+* android studio 实用插件<br/>
+ 1. GsonFormat
+ ```
+ 快速将json字符串转换成一个Java Bean，免去我们根据json字符串手写对应Java Bean的过程。
+ ```
+ 2. Android Parcelable code generator
+ ```
+ JavaBean序列化，快速实现Parcelable接口。
+ ```
+ 3. Android Methods Count
+ ```
+ JavaBean序列化，快速实现Parcelable接口。
+ ```
+ 4. CodeGlance
+ ```
+ 在右边可以预览代码，实现快速定位
+ ```
+ 5. idea-markdown
+ ```
+ markdown插件
+ ```
+ 6. WakaTime
+ ```
+ https://github.com/wakatime/jetbrains-wakatime
+ 记录你在IDE上的工作时间
+ ```
+ 7. adb-idea
+ ```
+ 可以一键清理缓存并重启APP
