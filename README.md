@@ -242,9 +242,9 @@ export PATH=/usr/local/android-studio/bin:$PATH
  ```
  JavaBean序列化，快速实现Parcelable接口。
  ```
- 3. Android Methods Count
+ 3. adb-idea
  ```
- JavaBean序列化，快速实现Parcelable接口。
+ 可以一键清理缓存并重启APP
  ```
  4. CodeGlance
  ```
@@ -259,6 +259,3 @@ export PATH=/usr/local/android-studio/bin:$PATH
  https://github.com/wakatime/jetbrains-wakatime
  记录你在IDE上的工作时间
  ```
- 7. adb-idea
- ```
- 可以一键清理缓存并重启APP
