@@ -1,5 +1,6 @@
 # ubuntu-for-Android
  在Ubuntu搭建安卓开发环境
+ ![Ubuntu && Android](/ubuntuforandroid.png)
 ## 安装ubuntu（基于16.04）
 ### 步骤
 http://www.linuxdiyf.com/linux/20012.html
