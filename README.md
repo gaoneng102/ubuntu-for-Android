@@ -235,7 +235,9 @@ export PATH=/usr/local/android-studio/bin:$PATH
  https://github.com/keyboardsurfer/idea-live-templates
  ```
 * android studio 实用插件<br/>
- 1. GsonFormat
+ 1. GsonFormat<br>
+ (JsonToKotlinClass 将json装换为kotlin data类
+  https://github.com/wuseal/JsonToKotlinClass)
  ```
  快速将json字符串转换成一个Java Bean，免去我们根据json字符串手写对应Java Bean的过程。
  ```
