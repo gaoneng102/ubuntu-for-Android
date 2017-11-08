@@ -49,9 +49,17 @@ sudo add-apt-repository ppa:noobslab/icons
 sudo apt-get update
 sudo apt-get install ultra-flat-icons
 ```
+* Arc-Flatabulous 主题（暗黑系）<br>
+https://github.com/andreisergiu98/arc-flatabulous-theme
+
 * 安装字体(文泉)
 ```
 sudo apt-get install fonts-wqy-microhei
+```
+* 鼠标指针 <br/>
+https://www.gnome-look.org/content/show.php/Breeze+Serie?content=169316
+```
+sudo apt install breeze-cursor-theme oxygen-cursor-theme oxygen-cursor-theme-extra
 ```
 
 ### 必备软件
@@ -82,12 +90,20 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 ```
 sudo apt-get install rar
 ```
-* Shadowsocks-Qt5 <br/>
+* Shadowsocks-Qt5 （客户端，有些加密方式不支持的话就得使用下面命令行）<br/>
 https://github.com/shadowsocks/shadowsocks-qt5/wiki/%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97
 ```
 sudo add-apt-repository ppa:hzwhuang/ss-qt5
 sudo apt-get update
 sudo apt-get install shadowsocks-qt5
+```
+* shadowsocks-libev (命令行版本，定制性和拓展性更强)<br/>
+https://github.com/shadowsocks/shadowsocks-libev
+```
+sudo apt-get install software-properties-common -y
+sudo add-apt-repository ppa:max-c-lv/shadowsocks-libev -y
+sudo apt-get update
+sudo apt install shadowsocks-libev
 ```
 * chrome <br/>
 https://www.google.com/chrome/browser/desktop/index.html
