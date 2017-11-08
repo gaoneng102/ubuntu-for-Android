@@ -52,6 +52,9 @@ sudo apt-get install ultra-flat-icons
 * Arc-Flatabulous 主题（暗黑系）<br>
 https://github.com/andreisergiu98/arc-flatabulous-theme
 
+* paper-icon-theme 图标（扁平化）<br>
+https://github.com/snwh/paper-icon-theme
+
 * 安装字体(文泉)
 ```
 sudo apt-get install fonts-wqy-microhei
